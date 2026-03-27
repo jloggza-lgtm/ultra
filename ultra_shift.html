@@ -873,6 +873,13 @@
               <div class="track-item-desc">Dedicated API endpoint with direct connection to the producing block producer, bypassing the standard three-layer propagation path. Order flow is invisible to the network until block inclusion.</div>
             </div>
           </div>
+          <div class="track-item">
+            <div class="track-dot"></div>
+            <div>
+              <div class="track-item-title">Transaction Queue Management</div>
+              <div class="track-item-desc">Under high volatility or extended queue build-up, a dedicated service can cancel queued but not-yet-included transactions, preventing stale orders from executing at bad prices.</div>
+            </div>
+          </div>
           <div class="track-outcome">
             Estimated outcome: <strong>20,000+ TPS &amp; 2–25 ms</strong> execution time on any sized orderbook with full network optimizations in place.
           </div>
