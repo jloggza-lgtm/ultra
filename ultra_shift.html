@@ -196,7 +196,7 @@
     }
 
     .section-num {
-      font-size: 11px;
+      font-size: 16px;
       font-weight: 700;
       letter-spacing: 3px;
       text-transform: uppercase;
@@ -640,6 +640,86 @@
       .bg-canvas { display: none; }
       body { background: #0b0c1a !important; }
     }
+
+    /* ─── Executive Summary ─────────────────────────────────────── */
+    .exec-summary {
+      position: relative;
+      margin-bottom: 72px;
+      padding: 48px 44px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(111,61,224,0.12) 0%, rgba(45,98,255,0.08) 50%, rgba(24,255,232,0.06) 100%);
+    }
+    .exec-summary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      padding: 1px;
+      background: var(--grad-fusion-h);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+    .exec-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--shift-cyan);
+      margin-bottom: 12px;
+    }
+    .exec-headline {
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--white);
+      margin-bottom: 36px;
+      line-height: 1.15;
+    }
+    .exec-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .exec-block { display: flex; flex-direction: column; gap: 10px; }
+    .exec-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--grad-fusion);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--shift-navy);
+      margin-bottom: 10px;
+      flex-shrink: 0;
+    }
+    .exec-block-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .exec-block-body {
+      font-size: 14px;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.65);
+    }
+    .exec-framing {
+      font-size: 15px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.65;
+      margin-bottom: 36px;
+      margin-top: -20px;
+    }
+    @media (max-width: 720px) {
+      .exec-summary { padding: 32px 24px; }
+      .exec-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -681,7 +761,7 @@
 
     </div>
 
-    <div class="header-eyebrow">HFT Validation Brief · #001</div>
+    <div class="header-eyebrow">Partnership Brief</div>
 
     <h1 class="header-title">
       Infrastructure Built for<br/>
@@ -691,20 +771,50 @@
     <div class="header-meta">
       <div class="header-meta-item">
         <span class="label">Date</span>
-        <span class="value">25 March 2026</span>
+        <span class="value">28 March 2026</span>
       </div>
       <div class="header-meta-item">
         <span class="label">Document</span>
-        <span class="value">Benchmark Results & Partnership Proposal</span>
+        <span class="value">Benchmark, Roadmap & Partnership Proposal</span>
       </div>
       <div class="header-meta-item">
         <span class="label">Classification</span>
-        <span class="value">Confidential — For Recipient Only</span>
+        <span class="value">Confidential — For SHIFT Only</span>
       </div>
     </div>
   </header>
 
   <hr class="gradient-line" />
+
+<!-- ══════════════════════════════════════════════════════════════
+       00 · EXECUTIVE SUMMARY
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="exec-summary">
+    <div class="exec-eyebrow">Executive Summary</div>
+    <h2 class="exec-headline">The Case for Ultra in Three Points</h2>
+    <p class="exec-framing">SHIFT needs institutional-grade infrastructure to make RWA markets credible. Ultra needs a flagship partner with real assets to showcase the venue.</p>
+    <div class="exec-grid">
+
+      <div class="exec-block">
+        <div class="exec-num">01</div>
+        <div class="exec-block-title">What Ultra Brings</div>
+        <div class="exec-block-body">A proven and optimizable execution layer. Controlled infrastructure that can be purpose-built around SHIFT in a way no permissionless chain can offer.</div>
+      </div>
+
+      <div class="exec-block">
+        <div class="exec-num">02</div>
+        <div class="exec-block-title">What SHIFT Brings</div>
+        <div class="exec-block-body">Real assets, institutional credibility, and a partnership that showcases Ultra's technology to new segments of users.</div>
+      </div>
+
+      <div class="exec-block">
+        <div class="exec-num">03</div>
+        <div class="exec-block-title">What We Build Together</div>
+        <div class="exec-block-body">A differentiated RWA trading venue, attractive to both retail and professional traders. </div>
+      </div>
+
+    </div>
+  </section>
 
   <!-- ══════════════════════════════════════════════════════════════
        01 · PURPOSE & CONTEXT
@@ -772,7 +882,7 @@
         </thead>
         <tbody>
           <tr>
-            <td>Small Orderbook</td>
+            <td>Low Orderbook</td>
             <td>100</td>
             <td class="metric">7,100</td>
             <td class="ms">0.14 ms</td>
@@ -786,10 +896,10 @@
             <td><span class="badge badge-green">✓ Solid</span></td>
           </tr>
           <tr>
-            <td>Large Orderbook</td>
+            <td>High Orderbook</td>
             <td>100,000</td>
-            <td class="metric">176</td>
-            <td class="ms">5.68 ms</td>
+            <td>176</td>
+            <td>5.68 ms</td>
             <td><span class="badge badge-orange">→ Pre-fix</span></td>
           </tr>
         </tbody>
@@ -797,7 +907,7 @@
     </div>
 
     <div class="bench-note">
-      <strong>Reading these results:</strong> Small and medium orderbooks represent the realistic operating range for a new RWA market at launch, and both perform strongly — demonstrating clear HFT viability at the contract level. The large orderbook figure reflects a known architectural constraint (state serialization at depth) that is directly addressed in the optimization roadmap below. We are presenting this figure transparently, because it is a known issue we intend to fix.
+      <strong>Reading these results:</strong> Small and medium orderbooks demonstrate clear HFT viability at the contract level. At 100k price levels, degradation is expected - no venue launches at that depth. That said, our optimization scoped below results in uniform performance at any depth. 
     </div>
   </section>
 
@@ -819,7 +929,7 @@
             <div class="track-label">Track A</div>
             <div class="track-title">Smart Contract</div>
           </div>
-          <div class="track-timeline">4–6 weeks</div>
+          <div class="track-timeline">4 weeks</div>
         </div>
         <div class="track-body">
           <div class="track-item">
@@ -849,7 +959,7 @@
             <div class="track-label">Track B</div>
             <div class="track-title">Network Layer</div>
           </div>
-          <div class="track-timeline">TBD</div>
+          <div class="track-timeline">2-6 weeks</div>
         </div>
         <div class="track-body">
           <div class="track-item">
@@ -905,39 +1015,39 @@
     <div class="partnership-grid">
 
       <div class="p-card">
-        <div class="p-card-icon" style="background: rgba(111,61,224,0.15);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9B6EFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-        <div class="p-card-title">Liquidity at Launch</div>
-        <div class="p-card-desc">SHIFT's assets will not launch into an empty book. Committed to coordinating initial orderbook depth through market maker relationships.</div>
+        <div class="p-card-icon" style="background: rgba(45,98,255,0.15);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2d62ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div class="p-card-title">Distribution</div>
+        <div class="p-card-desc">SHIFT's RWA assets are traded on Ultra's DEX as the anchor market from day one.</div>
       </div>
 
       <div class="p-card">
-        <div class="p-card-icon" style="background: rgba(45,98,255,0.15);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2d62ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-        <div class="p-card-title">Distribution</div>
-        <div class="p-card-desc">SHIFT is listed and visible across Ultra's platform to an existing, active user base.</div>
+        <div class="p-card-icon" style="background: rgba(111,61,224,0.15);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9B6EFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="p-card-title">Liquidity</div>
+        <div class="p-card-desc">Coordinating initial orderbook depth through new and existing market maker relationships. SHIFT's assets will not launch into an empty book.</div>
       </div>
 
       <div class="p-card">
         <div class="p-card-icon" style="background: rgba(24,255,232,0.10);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#18ffe8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <div class="p-card-title">GTM Partnership</div>
-        <div class="p-card-desc">Active co-marketing: joint campaigns, shared announcements, coordinated community outreach.</div>
+        <div class="p-card-title">Community Activation</div>
+        <div class="p-card-desc">Ultra has a large community and following waiting to be activated.</div>
       </div>
 
       <div class="p-card">
-        <div class="p-card-icon" style="background: rgba(24,255,232,0.10);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#18ffe8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-        <div class="p-card-title">Exclusivity Window</div>
-        <div class="p-card-desc">SHIFT holds protected status as Ultra's exclusive RWA partner for an agreed period. No competing asset class is onboarded without mutual sign-off.</div>
+        <div class="p-card-icon" style="background: rgba(24,255,232,0.10);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#18ffe8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="p-card-title">GTM Partnership</div>
+        <div class="p-card-desc">Active co-marketing. Announcements, campaigns, and rewards to activate a retail audience.</div>
       </div>
 
       <div class="p-card">
         <div class="p-card-icon" style="background: rgba(221,35,187,0.12);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dd23bb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
         <div class="p-card-title">Joint Product Roadmap</div>
-        <div class="p-card-desc">This is an engineering relationship where SHIFT specifies requirements, Ultra builds. </div>
+        <div class="p-card-desc">Ultra builds the infrastructure and venue around SHIFT's specified requirements.</div>
       </div>
 
       <div class="p-card">
         <div class="p-card-icon" style="background: rgba(111,61,224,0.15);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9B6EFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
         <div class="p-card-title">Revenue Alignment</div>
-        <div class="p-card-desc">Fee-sharing or token allocation, structured so Ultra's upside is directly tied to SHIFT's trading volume.</div>
+        <div class="p-card-desc">Fee-sharing or token allocation, structured so Ultra's upside is directly tied to SHIFT's.</div>
       </div>
 
     </div>
@@ -1002,7 +1112,7 @@
       <!-- SHIFT mini wordmark — official -->
       <img src="https://cdn.prod.website-files.com/6823906e5032ea015d058952/68a4c01c199e0a27290bb096_SHIFT%20Horizontal%20Lockup%20Gradient%20-%20Light%20Logotype-2.svg" alt="SHIFT" style="height: 18px; width: auto; opacity: 0.45;" />
     </div>
-    <div class="footer-copy">Confidential · Ultra × SHIFT HFT Validation Brief #1 · 25 March 2026</div>
+    <div class="footer-copy">Confidential · Ultra × SHIFT HFT Validation Brief #1 · 28 March 2026</div>
   </footer>
 
 </div>
