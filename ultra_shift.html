@@ -276,11 +276,12 @@
       padding: 16px 18px;
     }
     .bench-meta-item .key {
-      font-size: 10px;
-      font-weight: 600;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: var(--white);
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--white-40);
       margin-bottom: 6px;
     }
     .bench-meta-item .val {
@@ -856,15 +857,15 @@
 
     <div class="bench-meta">
       <div class="bench-meta-item">
-        <div class="key">Environment</div>
+        <div class="key"><strong>Environment</strong></div>
         <div class="val">Local / isolated, single block producer</div>
       </div>
       <div class="bench-meta-item">
-        <div class="key">Hardware</div>
+        <div class="key"><strong>Hardware</strong></div>
         <div class="val">4 GHz CPU — scales linearly with clock speed</div>
       </div>
       <div class="bench-meta-item">
-        <div class="key">Scope</div>
+        <div class="key"><strong>Scope</strong></div>
         <div class="val">Smart contract layer only — network overhead is additive</div>
       </div>
     </div>
